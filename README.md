@@ -6,7 +6,7 @@ An intelligent conversational assistant powered by Retrieval-Augmented Generatio
 
 This project demonstrates a complete RAG (Retrieval-Augmented Generation) pipeline that:
 - Retrieves relevant Italian recipes from a vector database based on natural language queries
-- Uses local LLM models (DeepSeek-R1) to generate intelligent, contextual responses
+- Uses local LLM models (Qwen 2.5 7B) to generate intelligent, contextual responses
 - Provides recipe recommendations, modifications, and original creations inspired by traditional Italian cuisine
 - Runs entirely locally with no external API dependencies
 
