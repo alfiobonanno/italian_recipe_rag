@@ -1,16 +1,10 @@
 import gradio as gr
-from retrieval_generation import *
+from retrieval_generation import chat, reset_memory
+
 
 def chat_fn(message, history):
-    history = history or []
-    history.append((message, ""))
-
-    # stream tokens
-    partial = ""
-    for chunk in generate_response(message):
-        partial += chunk
-        history[-1] = (message, partial)
-        yield history
+    answer = chat(message)
+    return history + [[message, answer]]
 
 with gr.Blocks() as demo:
     gr.Markdown("<h1>🍝 Italian Recipe Chef – Local RAG Assistant</h1>")
@@ -23,7 +17,11 @@ with gr.Blocks() as demo:
 
     clear_btn = gr.Button("Clear Chat")
 
+    def clear_chat():
+        reset_memory()
+        return []
+
     user_input.submit(chat_fn, [user_input, chatbot], chatbot)
-    clear_btn.click(lambda: [], None, chatbot)
+    clear_btn.click(clear_chat, None, chatbot)
 
 demo.launch()
