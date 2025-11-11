@@ -85,7 +85,7 @@ The project comes **pre-configured with the vector database** and is ready to ru
    - Pull the required models:
    ```bash
    ollama pull snowflake-arctic-embed2:568m
-   ollama pull deepseek-r1:8b
+   ollama pull qwen2.5:7b
    ```
 
 4. **Run the application**
