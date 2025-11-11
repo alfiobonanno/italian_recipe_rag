@@ -153,7 +153,7 @@ italian_recipes/
 
 ### Vector Database
 - **ChromaDB** with cosine similarity
-- Stores ~1000+ Italian recipes with embeddings
+- Stores ~5000+ Italian recipes with embeddings
 - Metadata: recipe name, category, source link
 
 ### Prompt Engineering
