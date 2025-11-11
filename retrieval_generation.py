@@ -74,7 +74,7 @@ rag_chain = (
 )
 
 
-# ✅ Chat interface function
+#Chat interface function
 def chat(query: str) -> str:
     answer = rag_chain.invoke(query)
 
@@ -82,7 +82,6 @@ def chat(query: str) -> str:
     from langchain_core.messages import HumanMessage, AIMessage
     memory.add_message(HumanMessage(content=query))
     memory.add_message(AIMessage(content=answer))
-
     return answer
 
 
