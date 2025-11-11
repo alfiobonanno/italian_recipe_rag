@@ -170,7 +170,7 @@ The project uses **LangChain** to build a modular RAG pipeline:
   - Optimized for semantic similarity search
   - Integrated via `OllamaEmbeddings`
   
-- **Language Model**: `deepseek-r1:8b` (8B parameters)
+- **Language Model**: `qwen2.5:7b` (7B parameters)
   - Reasoning-focused architecture
   - Generates contextual, creative responses
   - Integrated via LangChain's `Ollama` wrapper
