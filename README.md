@@ -61,8 +61,8 @@ The project comes **pre-configured with the vector database** and is ready to ru
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
-   cd italian_recipes
+   git clone https://github.com/alfiobonanno/italian_recipe_rag.git
+   cd italian_recipe_rag
    ```
 
 2. **Install dependencies**
