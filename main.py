@@ -1,6 +1,11 @@
 import gradio as gr
+from storage.vectordb import build_chroma_db
 from retrieval_generation import chat, reset_memory
 
+def main():
+    # Build or load the Chroma vector database
+    chroma_client = build_chroma_db()
+    return chroma_client
 
 def chat_fn(message, history):
     answer = chat(message)
@@ -24,4 +29,6 @@ with gr.Blocks() as demo:
     user_input.submit(chat_fn, [user_input, chatbot], chatbot)
     clear_btn.click(clear_chat, None, chatbot)
 
-demo.launch()
+if __name__ == "__main__":
+    main()
+    demo.launch()

@@ -57,7 +57,7 @@ This project demonstrates a complete RAG (Retrieval-Augmented Generation) pipeli
 
 ### Quick Start (Ready to Use!)
 
-The project comes **pre-configured with the vector database** and is ready to run immediately!
+The project **automatically builds the vector database** on first run!
 
 1. **Clone the repository**
    ```bash
@@ -92,6 +92,8 @@ The project comes **pre-configured with the vector database** and is ready to ru
    ```bash
    python main.py
    ```
+   
+   **First Run:** The app will automatically detect the missing database and build it from `utils/italian_recipes_embedded.csv`. This takes 1-2 minutes and only happens once.
 
 The Gradio interface will open in your browser at `http://localhost:7860`
 
@@ -196,6 +198,40 @@ The system uses a carefully crafted ChatPromptTemplate that:
 - **Dietary Needs**: Adapt recipes for gluten-free, vegan, or other restrictions
 - **Culinary Students**: Understand Italian cooking traditions and ingredient combinations
 - **Food Bloggers**: Generate creative recipe variations for content creation
+
+## 🛠️ Troubleshooting
+
+### ChromaDB Errors (HNSW Index Issues)
+
+If you encounter errors like `Error loading hnsw index` or `Error executing plan`, this means the vector database was corrupted during git operations. To fix:
+
+1. **Stop the running application** (press Ctrl+C)
+
+2. **Delete the corrupted database:**
+   ```bash
+   # Windows PowerShell
+   Remove-Item -Recurse -Force "storage/chroma_recipes_db"
+   
+   # Linux/Mac
+   rm -rf storage/chroma_recipes_db
+   ```
+
+3. **Rebuild the database:**
+   ```bash
+   python storage/vectordb.py
+   ```
+   This will regenerate the vector database from `utils/italian_recipes_embedded.csv`
+
+4. **Restart the application:**
+   ```bash
+   python main.py
+   ```
+
+**Why this happens:** ChromaDB stores binary index files that don't transfer well through git. The database should be rebuilt locally after cloning.
+
+### Deprecated LangChain Warnings
+
+If you see deprecation warnings for `OllamaEmbeddings`, `Chroma`, or `Ollama`, these are informational only and don't affect functionality. The application will continue to work normally.
 
 ## 🤝 Contributing
 

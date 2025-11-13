@@ -48,9 +48,9 @@ venv.bak/
 .env.local
 .env.*.local
 
-# Vector Database (ChromaDB) - Included in repo for ready-to-use deployment
-# Uncomment the line below if you want to exclude the vector database
-# src/storage/chroma_recipes_db/
+# Vector Database (ChromaDB) - Excluded to prevent corruption
+# Users should rebuild using: python storage/vectordb.py
+storage/chroma_recipes_db/
 
 # Data files (optional - uncomment if you want to exclude large data files)
 # data/*.csv

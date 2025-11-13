@@ -6,7 +6,16 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables import RunnableMap, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 import chromadb
+import os
 
+
+# Auto-build database if it doesn't exist
+if not os.path.exists("storage/chroma_recipes_db"):
+    print("⚠️  Vector database not found. Building from scratch...")
+    print("This is a one-time setup and may take a few minutes...\n")
+    from storage.vectordb import build_chroma_db
+    build_chroma_db()
+    print("\n✅ Database ready!\n")
 
 # Loading of persistent Chroma client
 client = chromadb.PersistentClient(path="storage/chroma_recipes_db")
