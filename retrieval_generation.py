@@ -79,14 +79,28 @@ rag_chain = (
 
 #Chat interface function
 def chat(query: str) -> str:
+    # Retrieve documents
+    retrieved_docs = retriever.invoke(query)
+    
+    # Print retrieved documents
+    print("\n" + "="*80)
+    print(f"RETRIEVED DOCUMENTS ({len(retrieved_docs)} found):")
+    print("="*80)
+    for i, doc in enumerate(retrieved_docs, 1):
+        print(f"\n--- Document {i} ---")
+        print(f"Content: {doc.page_content[:200]}...")  # First 200 chars
+        if doc.metadata:
+            print(f"Metadata: {doc.metadata}")
+    print("="*80 + "\n")
+    
+    # Generate answer using the full pipeline
     answer = rag_chain.invoke(query)
 
-    #Save to memory
+    # Save to memory
     from langchain_core.messages import HumanMessage, AIMessage
     memory.add_message(HumanMessage(content=query))
     memory.add_message(AIMessage(content=answer))
     return answer
-
 
 # Reset memory (for Gradio's Clear button)
 def reset_memory():
