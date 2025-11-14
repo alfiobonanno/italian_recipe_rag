@@ -11,11 +11,11 @@ import os
 
 # Auto-build database if it doesn't exist
 if not os.path.exists("storage/chroma_recipes_db"):
-    print("⚠️  Vector database not found. Building from scratch...")
+    print("Vector database not found. Building from scratch...")
     print("This is a one-time setup and may take a few minutes...\n")
     from storage.vectordb import build_chroma_db
     build_chroma_db()
-    print("\n✅ Database ready!\n")
+    print("Database ready!")
 
 # Loading of persistent Chroma client
 client = chromadb.PersistentClient(path="storage/chroma_recipes_db")
