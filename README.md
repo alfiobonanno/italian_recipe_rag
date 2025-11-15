@@ -74,7 +74,7 @@ The AI will retrieve relevant recipes from the database and provide detailed, ch
    - Conversation history display and management
    - Clear chat functionality with memory reset
 
-## 🚀 Getting Started
+## 🚀 Getting Started Locally
 
 ### Prerequisites
 
@@ -82,7 +82,7 @@ The AI will retrieve relevant recipes from the database and provide detailed, ch
 - [Ollama](https://ollama.ai/) installed locally
 - 8GB+ RAM recommended
 
-### Quick Start (Ready to Use!)
+### Quick Start - Locally
 
 The project **automatically builds the vector database** on first run!
 
