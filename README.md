@@ -10,6 +10,33 @@ This project demonstrates a complete RAG (Retrieval-Augmented Generation) pipeli
 - Provides recipe recommendations, modifications, and original creations inspired by traditional Italian cuisine
 - Runs entirely locally with no external API dependencies
 
+## An upgraded and improved version of this app is available for demonstration at:
+
+**👉 [Italian Recipe RAG Assistant - Live Demo](https://italian-recipe-rag-970329359630.us-central1.run.app/)**
+
+### What Powers This Demo
+
+This production deployment leverages cutting-edge AI technology:
+
+- **🤖 Google Gemini 2.0 Flash**: State-of-the-art language model for natural, contextual recipe conversations
+- **🔍 Gemini Embedding-001**: Advanced 3072-dimensional embeddings for semantic recipe search
+- **📊 Pinecone Vector Database**: Lightning-fast similarity search across thousands of authentic Italian recipes
+- **☁️ Google Cloud Run**: Serverless, scalable deployment with automatic scaling
+- **💬 Context-Aware Chat**: Maintains conversation history for follow-up questions and recipe refinements
+
+The demonstation produces improved results compared to local models!
+
+### Try It Out
+
+Ask the assistant questions like:
+- "How do I make authentic carbonara?"
+- "Can you suggest a vegetarian pasta dish?"
+- "I want to make parmigiana but with zucchini instead of eggplant"
+- "What's a good dessert that uses ricotta?"
+
+The AI will retrieve relevant recipes from the database and provide detailed, chef-quality guidance in a conversational manner.
+
+
 ## ✨ Features
 
 - **🔍 Intelligent Recipe Search**: Natural language queries retrieve the most relevant recipes from a database of Italian dishes
